@@ -1,2 +1,2 @@
 # form-wave-animation
-react, emotion
+react, emotion - styled components
