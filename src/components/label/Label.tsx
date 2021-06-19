@@ -20,8 +20,11 @@ interface LabelProps {
 const Label: React.FC<LabelProps> = ({ label, id }) => {
   return (
     <LabelStyled key={label} htmlFor={id}>
-      {label}
-      <span></span>
+      {label.split("").map((letter, idx) => (
+        <span key={letter} style={{ transitionDelay: `${idx * 50}ms` }}>
+          {letter}
+        </span>
+      ))}
     </LabelStyled>
   );
 };

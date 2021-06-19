@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { Global, css } from "@emotion/react";
 import "./style.css";
 import FormControl from "./components/form-control/Form-Control";
 import Button from "./components/button/Button";
@@ -23,8 +22,8 @@ const Container = styled.div`
 `;
 const App = () => {
   const data = [
-    { label: "Email", id: "", type: "email" },
-    { label: "Password", id: "", type: "password" },
+    { label: "Email", type: "text", required: true },
+    { label: "Password", type: "password", required: true },
   ];
 
   return (
@@ -32,8 +31,8 @@ const App = () => {
       <Container>
         <h1>Please Login</h1>
         <form>
-          {data.map((el, idx) => (
-            <FormControl label={el.label} id={el.id} type={el.type} key={el.id}></FormControl>
+          {data.map((el) => (
+            <FormControl label={el.label} type={el.type} key={el.type} required={el.required}></FormControl>
           ))}
 
           <Button />

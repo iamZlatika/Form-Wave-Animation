@@ -15,24 +15,29 @@ const FormControlStyled = styled.div`
     padding: 15px 0;
     font-size: 18px;
     color: #fff;
-  }
-  input:focus,
-  input:valid {
-    outline: 0;
-    border-bottom: lightblue solid 2px;
+    &:focus,
+    &:valid {
+      outline: 0;
+      border-bottom: lightblue solid 2px;
+    }
+    &:focus + label span,
+    &:valid + label span {
+      color: lightblue;
+      transform: translateY(-30px);
+    }
   }
 `;
 
 interface FormControlProps {
-  id: string;
   type: string;
   label: string;
+  required: boolean;
 }
-const FormControl: React.FC<FormControlProps> = ({ id, type, label }) => {
+const FormControl: React.FC<FormControlProps> = ({ type, label, required }) => {
   return (
-    <FormControlStyled key={label}>
-      <input id={id} type={type}></input>
-      <Label label={label} id={id} />
+    <FormControlStyled key={type}>
+      <input id={type} type={type} required={required}></input>
+      <Label label={label} id={type} />
     </FormControlStyled>
   );
 };

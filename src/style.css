@@ -15,8 +15,8 @@ body {
   margin: 0;
 }
 
-.form-control input:focus + label span,
+/* .form-control input:focus + label span,
 .form-control input:valid + label span {
   color: lightblue;
   transform: translateY(-30px);
-}
+} */
